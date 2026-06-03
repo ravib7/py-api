@@ -3,7 +3,6 @@ from flask import Flask
 app = Flask(__name__)
 
 
-
 @app.route("/", methods=["GET"])
 def home():
     return {"message":"welcome to flask"}
@@ -27,6 +26,12 @@ def updateTodo():
 @app.route("/todo/remove", methods=["DELETE"])
 def deleteTodo():
     return {"message":"todo remove success"}
+    
+
+@app.route("/me", methods=["GET"])
+def me():
+    return {"message":"john doe", "role":"admin"}
+    
 
 if __name__== "__main__":
     app.run(debug=True)
